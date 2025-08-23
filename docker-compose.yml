@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: movieflix_container
+    environment:
+      POSTGRES_DB: movieflix_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+
+# how to create container from terminal without compose
+# docker run -d --name movieflix_container -p 5432:5432 -e POSTGRES_USER=postgres
+# -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=movieflix_db postgres:latest
