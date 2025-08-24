@@ -1,6 +1,5 @@
 package br.com.movieflix.service;
 
-import br.com.movieflix.entity.Category;
 import br.com.movieflix.entity.Streaming;
 import br.com.movieflix.repository.StreamingRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +19,7 @@ public class StreamingService {
 
     }
 
-    public Streaming saveCategory(Streaming streaming){
+    public Streaming saveStreaming(Streaming streaming){
         return repository.save(streaming);
     }
 
@@ -28,7 +27,7 @@ public class StreamingService {
         return repository.findById(id);
     }
 
-    public void deleteCategory(Long id){
+    public void deleteStreaming(Long id){
         repository.deleteById(id);
     }
 }
