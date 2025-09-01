@@ -1,5 +1,6 @@
 package br.com.movieflix.controller;
 
+import br.com.movieflix.controller.request.UserRequest;
 import br.com.movieflix.controller.response.UserResponse;
 import br.com.movieflix.entity.User;
 import br.com.movieflix.mapper.UserMapper;
@@ -20,7 +21,7 @@ public class AuthController {
     private final UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<UserResponse> register(@RequestBody UserResponse request){
+    public ResponseEntity<UserResponse> register(@RequestBody UserRequest request){
         User savedUser = userService.save(UserMapper.toUser(request));
         return ResponseEntity.status(HttpStatus.CREATED).body(UserMapper.toUserResponse(savedUser));
 
